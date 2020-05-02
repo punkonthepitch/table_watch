@@ -35,31 +35,31 @@ def redraw():
 
     seat1 = pygame.sprite.Sprite
     seat1.sat = False
-    if seat1.status == True:
+    if seat1.sat == True:
         pygame.draw.rect(window,BLACK,(120, 280,40,40))
     pygame.draw.rect(window,GREY,(120, 280,40,40),2)
 
     seat2 = pygame.sprite.Sprite
     seat2.sat = False
-    if seat2.status == True:
+    if seat2.sat == True:
         pygame.draw.rect(window,BLACK,(120, 200,40,40))
     pygame.draw.rect(window, GREY, (120, 200, 40, 40), 2)
 
     seat3 = pygame.sprite.Sprite
     seat3.sat = False
-    if seat3.status == True:
+    if seat3.sat == True:
         pygame.draw.rect(window,BLACK,(290, 200,40,40))
     pygame.draw.rect(window, GREY, (290, 200, 40, 40), 2)
 
     seat4 = pygame.sprite.Sprite
     seat4.sat= False
-    if seat4.status == True:
+    if seat4.sat == True:
         pygame.draw.rect(window,BLACK,(290,280,40,40))
     pygame.draw.rect(window, GREY, (290, 280, 40, 40), 2)
 
 
     if seat1.sat or seat2.sat or seat3.sat or seat4.sat:
-        table.status = "sat"
+        table.sat = "sat"
 
     pygame.display.update()
 
