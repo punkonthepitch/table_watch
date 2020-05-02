@@ -22,14 +22,14 @@ running = True
 def redraw():
     window.fill((bg_color))  # background color
 
-    tabletop = pygame.sprite.Sprite
-    tabletop.status = "ready"
+    table = pygame.sprite.Sprite
+    table.status = "ready"
 
-    if tabletop.status == "ready":
+    if table.status == "ready":
         pygame.draw.rect(window, GREY, (180, 180, 90, 160))
-    if tabletop.status == "sat":
+    elif table.status == "sat":
         pygame.draw.rect(window,GREEN,(180,180,90,160))
-    if tabletop.status == "dirty":
+    elif table.status == "dirty":
         pygame.draw.rect(window, RED, (180, 180, 90, 160))
 
 
@@ -58,16 +58,8 @@ def redraw():
     pygame.draw.rect(window, GREY, (290, 280, 40, 40), 2)
 
 
-    seat_list = []
-
-    seat_list.append(seat1)
-    seat_list.append(seat2)
-    seat_list.append(seat3)
-    seat_list.append(seat4)
-
-    for seat in seat_list:
-        if seat.status=="full":
-            tabletop.sat = True
+    if seat1.status == "full" or seat2.status == "full" or seat3.status == "full" or seat4.status == "full":
+        table.status = "sat"
 
     pygame.display.update()
 
@@ -91,6 +83,6 @@ while running:
         #seat 4 has person
 
     redraw()
-
+    pygame.display.flip()
 pygame.quit()
 
