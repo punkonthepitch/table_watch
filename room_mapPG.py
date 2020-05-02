@@ -34,31 +34,31 @@ def redraw():
 
 
     seat1 = pygame.sprite.Sprite
-    seat1.status = "empty"
-    if seat1.status == "full":
+    seat1.sat = False
+    if seat1.status == True:
         pygame.draw.rect(window,BLACK,(120, 280,40,40))
     pygame.draw.rect(window,GREY,(120, 280,40,40),2)
 
     seat2 = pygame.sprite.Sprite
-    seat2.status = "empty"
-    if seat2.status == "full":
+    seat2.sat = False
+    if seat2.status == True:
         pygame.draw.rect(window,BLACK,(120, 200,40,40))
     pygame.draw.rect(window, GREY, (120, 200, 40, 40), 2)
 
     seat3 = pygame.sprite.Sprite
-    seat3.status = "empty"
-    if seat3.status == "full":
+    seat3.sat = False
+    if seat3.status == True:
         pygame.draw.rect(window,BLACK,(290, 200,40,40))
     pygame.draw.rect(window, GREY, (290, 200, 40, 40), 2)
 
     seat4 = pygame.sprite.Sprite
-    seat4.status = "full"
-    if seat4.status == "full":
+    seat4.sat= False
+    if seat4.status == True:
         pygame.draw.rect(window,BLACK,(290,280,40,40))
     pygame.draw.rect(window, GREY, (290, 280, 40, 40), 2)
 
 
-    if seat1.status == "full" or seat2.status == "full" or seat3.status == "full" or seat4.status == "full":
+    if seat1.sat or seat2.sat or seat3.sat or seat4.sat:
         table.status = "sat"
 
     pygame.display.update()
@@ -74,7 +74,7 @@ while running:
     keys = pygame.key.get_pressed()
 
     if keys[pygame.K_1]:
-        seat_list[0].sat = True
+        seat1.sat = True
     #if keys[pygame.K_2]:
         #seat 2 has person
     #if keys[pygame.K_3]:
